@@ -1,0 +1,101 @@
+import { StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    width: "100%",
+    height: "100%",
+    // paddingTop: 80,
+    paddingTop: 60,
+  },
+  navbar: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    alignItems: "center",
+    marginBottom: 50,
+  },
+  headerText: {
+    fontSize: 22,
+    fontWeight: "700",
+  },
+  navbarImage: {
+    width: 40,
+    height: 40,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  fingerSwipe: {
+    marginRight: 5,
+    width: 30,
+    height: 30,
+  },
+  swipe: {
+    height: 30,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 20,
+  },
+  cartCard: {
+    display: "flex",
+    flexDirection: "row",
+    position: "relative",
+    backgroundColor: "#fff",
+    elevation: 5,
+    shadowColor: "#bbb",
+    width: "100%",
+    height: 140,
+    alignItems: "center",
+    borderRadius: 30,
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginBottom: 20,
+  },
+  productImage: {
+    width: 90,
+    height: 90,
+    borderRadius: 100,
+    marginRight: 5,
+  },
+  productTitle: {
+    fontSize: 24,
+    fontWeight: "900",
+    marginBottom: 15,
+  },
+  productPrice: {
+    fontSize: 22,
+  },
+  totalProduct: {
+    position: "absolute",
+    display: "flex",
+    flexDirection: "row",
+    backgroundColor: "#6A4029",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    right: 20,
+    width: 90,
+    height: 30,
+    bottom: 30,
+    borderRadius: 50,
+  },
+  decrement: {
+    fontSize: 20,
+    color: "#fff",
+    fontWeight: "700",
+  },
+  total: {
+    fontSize: 20,
+    color: "#fff",
+    fontWeight: "700",
+  },
+  increment: {
+    fontSize: 20,
+    color: "#fff",
+    fontWeight: "700",
+  },
+});
+export default styles;

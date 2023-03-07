@@ -1,15 +1,25 @@
 {
   "expo": {
-    "name": "build-apk",
-    "slug": "build-apk",
-    "version": "1.0.0",
+    "name": "Kopiku",
+    "slug": "kopiku",
+    "version": "1.0.1",
     "orientation": "portrait",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "We need access to your gallery / camera."
+        }
+      ]
+    ],
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/splash-kopiku.jpg",
+      "resizeMode": "cover"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,12 +29,21 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/kopiku.png",
+        "backgroundColor": "#FFBA33"
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.rhezaardiansyah.kopiku"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/kopiku.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "40b9b3ff-96d4-4485-976d-e29379a827d6"
+      }
     }
   }
 }
