@@ -12,7 +12,7 @@
         }
       ]
     ],
-    "icon": "./assets/icon.png",
+    "icon": "./assets/kopiku.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash-kopiku.png",
