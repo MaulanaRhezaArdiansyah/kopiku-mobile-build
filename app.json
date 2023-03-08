@@ -15,8 +15,9 @@
     "icon": "./assets/kopiku.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash-kopiku.png",
-      "resizeMode": "cover"
+      "image": "./assets/kopiku.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
