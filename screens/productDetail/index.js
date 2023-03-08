@@ -55,7 +55,7 @@ export default function ProductDetail({ route }) {
         setDetail(result.data.data);
       })
       .catch((err) => {
-        console.log(err);
+        err;
       });
   }, []);
   const [carts, setCarts] = useState([]);
@@ -66,7 +66,7 @@ export default function ProductDetail({ route }) {
         setCarts(data1);
       })
       .catch((err) => {
-        console.log(err);
+        err;
       });
   }, []);
 
@@ -79,8 +79,6 @@ export default function ProductDetail({ route }) {
   };
   const [refetchAddCart, setRefetchAddCart] = useState(false);
 
-  // detail = digunakan untuk menambah cart juga selain get data di flatlist
-  // carts = data cart yang sebelumnya sudah ditambahkan
   const storeCart = async () => {
     try {
       if (carts == null) {
@@ -95,13 +93,11 @@ export default function ProductDetail({ route }) {
       );
       setRefetchAddCart(true);
       navigation.navigate("Cart Page");
-      // AsyncStorage.removeItem("@cart");
     } catch (error) {
-      console.log(error);
+      error;
     }
   };
 
-  // dibawah ini untuk display cart length
   const [dataCartLength, setDataCartLength] = useState([]);
   useEffect(() => {
     AsyncStorage.getItem("@cart")
@@ -110,9 +106,8 @@ export default function ProductDetail({ route }) {
         setDataCartLength(data1);
       })
       .catch((err) => {
-        console.log(err);
+        err;
       });
-    // }, []);
   }, [refetchAddCart]);
 
   const numberWithCommas = (num) => {
@@ -169,15 +164,7 @@ export default function ProductDetail({ route }) {
         <Text style={styles.descriptionSubtext}>{detail.description}</Text>
       </View>
       <View style={styles.button}>
-        <TouchableOpacity
-          style={[commonStyle.brownButton]}
-          // onPress={() => {
-
-          //   // AsyncStorage.setItem("@cart", )
-          //   // navigation.navigate("Cart Page")
-          // }}
-          onPress={storeCart}
-        >
+        <TouchableOpacity style={[commonStyle.brownButton]} onPress={storeCart}>
           <Text style={{ color: "#fff", fontSize: 20, fontWeight: "700" }}>
             Add to cart
           </Text>

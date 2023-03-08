@@ -4,10 +4,8 @@ const styles = StyleSheet.create({
     display: "flex",
     width: "100%",
     height: "100%",
-    // paddingTop: 80,
     paddingTop: 60,
   },
-  //   NAVBAR STYLE
   navbar: {
     display: "flex",
     flexDirection: "row",
@@ -71,13 +69,11 @@ const styles = StyleSheet.create({
   cartItemText: {
     color: "#fff",
   },
-  //   TITLE STYLE
   title: {
     fontWeight: "700",
     color: "#000",
     fontSize: 36,
   },
-  // HELLO
   hello: {
     fontSize: 18,
     marginTop: 20,
@@ -85,7 +81,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#6A4029",
   },
-  //   SEARCH STYLE
   searchBox: {
     display: "flex",
     flexDirection: "row",
@@ -110,7 +105,6 @@ const styles = StyleSheet.create({
     color: "#6A4029",
   },
 
-  // TAB CATEGORY
   tabTextBox: {
     marginRight: 30,
     height: 60,
@@ -140,7 +134,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 
-  // CATEGORY TITLE
   categoryTitle: {
     display: "flex",
     flexDirection: "row",
@@ -154,12 +147,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
-  // PRODUCT CARD
   cardWrapper: {
     height: 350,
-    // width: 100,
     width: Dimensions.get("window").width / 1.5,
-    // backgroundColor: "red",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -171,22 +161,18 @@ const styles = StyleSheet.create({
   card: {
     width: "100%",
     height: "90%",
-    // backgroundColor: "blue",
     backgroundColor: "#fff",
     elevation: 10,
     borderRadius: 30,
-    // justifyContent: "flex-end",
     justifyContent: "flex-start",
     paddingTop: 200,
     alignItems: "center",
     paddingHorizontal: 10,
   },
   productImage: {
-    // width: "100%",
     position: "absolute",
     width: 180,
     height: 180,
-    // resizeMode: "contain",
     resizeMode: "cover",
     zIndex: 2,
     borderRadius: 30,
@@ -196,7 +182,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "900",
     textAlign: "center",
-    // backgroundColor: "red",
   },
   productPriceText: { fontSize: 20, fontWeight: "700", marginBottom: 40 },
 

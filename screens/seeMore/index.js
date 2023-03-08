@@ -17,7 +17,7 @@ export default function SeeMore({ route }) {
         setDataProductCategory(result.data.data);
       })
       .catch((err) => {
-        console.log(err.response.data.message);
+        err.response.data.message;
       });
   }, []);
   return (
@@ -35,7 +35,6 @@ export default function SeeMore({ route }) {
         style={styles.listProduct}
         numColumns={2}
         showsVerticalScrollIndicator={false}
-        // contentContainerStyle={styles.cardRowContainer}
         data={dataProductCategory}
         renderItem={({ item }) => {
           return (

@@ -19,38 +19,30 @@ export default function History({ navigation }) {
   const history = [
     {
       id: 1,
-      // productImage: ,
       productTitle: "Mbahman Coffee",
       productPrice: "12000",
       deliveryMethod: "Door delivery",
-      //   status: "Waiting for delivery",
       detailStatus: "3 PM",
     },
     {
       id: 2,
-      // productImage: ,
       productTitle: "Cappucino",
       productPrice: "20000",
       deliveryMethod: "Pick up at store",
-      // status: "Dine in",
       detailStatus: "April 27th 2023, 8 AM",
     },
     {
       id: 3,
-      // productImage: ,
       productTitle: "Hazelnut Latte",
       productPrice: "15000",
       deliveryMethod: "Dine in",
-      // status: "Dine in",
       detailStatus: "Monday at 3 PM",
     },
     {
       id: 4,
-      // productImage: ,
       productTitle: "Hazelnut Latte",
       productPrice: "15000",
       deliveryMethod: "Dine in",
-      // status: "Dine in",
       detailStatus: "Monday at 3 PM",
     },
   ];
@@ -64,7 +56,6 @@ export default function History({ navigation }) {
     const dataJSON = JSON.parse(response);
     const data = dataJSON?.user?.id;
     setUserID(data);
-    // setRefetch(true);
     setRefetch(!refetch);
   };
   useEffect(() => {
@@ -96,22 +87,11 @@ export default function History({ navigation }) {
               ToastAndroid.show(`${message} !`, ToastAndroid.SHORT);
             })
             .catch((err) => {
-              console.log("asd");
-              console.log(err);
+              ("asd");
+              err;
             }),
       },
     ]);
-    // axios
-    //   .delete(`${URL}/api/v1/history/${user_id}/${history_id}`)
-    //   .then((result) => {
-    //     const message = result.data.message;
-    //     setRefetch(!refetch);
-    //     ToastAndroid.show(`${message} !`, ToastAndroid.SHORT);
-    //   })
-    //   .catch((err) => {
-    //     console.log("asd");
-    //     console.log(err);
-    //   });
   };
 
   return (
@@ -170,13 +150,6 @@ export default function History({ navigation }) {
                       ]}
                     >
                       Waiting for delivery (will arrive at 3 PM)
-                      {/* {h.item.deliveryMethod === "Door delivery"
-                      ? `Waiting for delivery [ will arrive at ${h.item.detailStatus} ]`
-                      : h.item.deliveryMethod === "Pick up at store"
-                      ? `Picked up at store [ ${h.item.detailStatus} ]`
-                      : h.item.deliveryMethod === "Dine in"
-                      ? `Dine in on ${h.item.detailStatus}`
-                      : ""} */}
                     </Text>
                   </View>
                 </View>
@@ -217,8 +190,6 @@ export default function History({ navigation }) {
           </Text>
         </View>
       )}
-
-      {/* <Text style={styles.historyLeftText}>You have no history left</Text> */}
     </View>
   );
 }

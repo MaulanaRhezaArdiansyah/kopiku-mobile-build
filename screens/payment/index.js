@@ -46,9 +46,8 @@ export default function Payment({ navigation }) {
       const jsonValue = await JSON.parse(value);
       setCarts(jsonValue);
       return jsonValue;
-      // return jsonValue != null ? JSON.parse(value) : null;
     } catch (e) {
-      console.log(e);
+      e;
     }
   };
   useEffect(() => {
@@ -84,12 +83,6 @@ export default function Payment({ navigation }) {
     setPayment(carts);
   }, [carts]);
 
-  // const [dataAddHistory, setDataAddHistory] = useState({
-  //   product_title: "",
-  //   product_price: "",
-  //   order_item: 0,
-  //   product_id: "",
-  // });
   const [dataAddHistory, setDataAddHistory] = useState();
 
   useEffect(() => {
@@ -112,10 +105,10 @@ export default function Payment({ navigation }) {
         .then((result) => {
           AsyncStorage.removeItem("@cart");
           setModalVisible(true);
-          console.log(result);
+          result;
         })
         .catch((err) => {
-          console.log(err);
+          err;
         });
     }
   };
@@ -210,9 +203,7 @@ export default function Payment({ navigation }) {
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
                 setModalVisible(!modalVisible);
-                // AsyncStorage.removeItem("@cart");
                 navigation.navigate("Home Drawer");
-                // navigation.navigate("Splash Screen");
               }}
             >
               <Text style={styles.textStyle}>My pleasure.. 😊</Text>

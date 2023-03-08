@@ -47,36 +47,12 @@ export default function EditProfile({ navigation, route }) {
       const data = await response.data.data;
       setDataUser(data);
     } catch (error) {
-      console.log(error);
+      error;
     }
   };
   useEffect(() => {
     getUser();
   }, []);
-
-  // console.log("1");
-
-  // const fetchUser = async () => {
-  //   const url = `https://cheerful-overalls-fawn.cyclic.app/api/v1/users/${ID}`;
-  //   const response = await axios.get(url);
-  //   console.log(response);
-  // };
-  // fetchUser();
-  // console.log("2");
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     try {
-  //       const response = await axios.get(`${URL}/api/v1/users/${ID}`);
-  //       const data = await response?.data?.data;
-  //       setDataUser(data);
-  //       setRefetch(!refetch);
-  //       // setRefetch(true);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getUser();
-  // }, [refetch]);
 
   const [imagePreview, setImagePreview] = useState(null);
   const [dataInput, setDataInput] = useState({
@@ -142,12 +118,11 @@ export default function EditProfile({ navigation, route }) {
       },
     })
       .then((result) => {
-        console.log(result.data.message);
+        result.data.message;
         ToastAndroid.show(result.data.message, ToastAndroid.SHORT);
-        // navigation.navigate("Profile Page");
       })
       .catch((err) => {
-        console.log(err);
+        err;
         ToastAndroid.show("Failed to edit profile! 😐", ToastAndroid.SHORT);
       });
   };
@@ -239,7 +214,6 @@ export default function EditProfile({ navigation, route }) {
               placeholder={
                 dataUser?.birthday !== "null" ? dataUser?.birthday : "-"
               }
-              // style={}
             />
             <Pressable>
               <Image source={require("../../src/assets/images/calendar.png")} />

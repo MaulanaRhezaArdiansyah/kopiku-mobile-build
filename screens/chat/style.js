@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     display: "flex",
     width: "100%",
     height: "100%",
-    // paddingTop: 80,
     paddingTop: 60,
     position: "relative",
   },
@@ -22,7 +21,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
 
-  //   SEARCH STYLE
   searchBox: {
     display: "flex",
     flexDirection: "row",

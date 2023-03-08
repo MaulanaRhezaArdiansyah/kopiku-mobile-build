@@ -6,32 +6,28 @@ export default function ChatList() {
   const message = [
     {
       id: 1,
-      // image:
       name: "Yola",
       messageContent: "What beans do you use for making cold brew?",
-      statusReceive: "yesterday", // seharusnya memakai hitungan date dan math
+      statusReceive: "yesterday",
     },
     {
       id: 2,
-      // image:
       name: "Dea",
       messageContent: "What beans do you use for making cold brew?",
-      statusReceive: "yesterday", // seharusnya memakai hitungan date dan math
+      statusReceive: "yesterday",
     },
     {
       id: 3,
-      // image:
       name: "Bintang",
       messageContent:
         "What is pinky promise? Is it made from coffee or strawberry?",
-      statusReceive: "now", // seharusnya memakai hitungan date dan math
+      statusReceive: "now",
     },
     {
       id: 4,
-      // image:
       name: "Messi",
       messageContent: "What beans do you use for making cold brew?",
-      statusReceive: "yesterday", // seharusnya memakai hitungan date dan math
+      statusReceive: "yesterday",
     },
   ];
   const navigation = useNavigation();

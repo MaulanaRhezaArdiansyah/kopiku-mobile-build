@@ -57,7 +57,7 @@ export default function Cart() {
         setDataCart(carts);
       })
       .catch((err) => {
-        console.log(err);
+        err;
       });
   }, []);
   const numberWithCommas = (num) => {
@@ -122,7 +122,6 @@ export default function Cart() {
           <TouchableOpacity
             style={[commonStyle.brownButton, { marginBottom: 30 }]}
             onPress={() => navigation.navigate("Delivery Method Page")}
-            // onPress={() => AsyncStorage.removeItem("@userData")}
           >
             <Text style={{ color: "#fff", fontSize: 20, fontWeight: "700" }}>
               Confirm and Checkout

@@ -1,7 +1,4 @@
-import {
-  BaseNavigationContainer,
-  NavigationContainer,
-} from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Welcome from "./screens/welcome";
 import HomePage from "./screens/home";
@@ -23,85 +20,15 @@ import Chatroom from "./screens/chatroom";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import DrawerCustom from "./src/components/DrawerCustom";
 import Icon from "@expo/vector-icons/Ionicons";
-import { useEffect, useState } from "react";
-import { ToastAndroid } from "react-native";
 import SplashScreen from "./screens/splash/SplashScreen";
-import UploadImage from "./screens/uploadImage";
 
 const Drawer = createDrawerNavigator();
 
 const Stack = createNativeStackNavigator();
 export default function App() {
-  // const isLogged = true;
-  // const isLogged = false;
-  // return (
-  //   <NavigationContainer>
-  //     <Stack.Navigator>
-  //       {isLogged ? (
-  //         <>
-  //           <Stack.Screen
-  //             name="Home Page"
-  //             component={HomePage}
-  //             options={{ headerShown: false }}
-  //           />
-  //           <Stack.Screen
-  //             name="Product Detail Page"
-  //             component={ProductDetail}
-  //             options={{ title: "Product Detail Page", headerShown: false }}
-  //           />
-  //           <Stack.Screen
-  //             name="Cart Page"
-  //             component={Cart}
-  //             options={{ title: "Cart Page", headerShown: false }}
-  //           />
-  //         </>
-  //       ) : (
-  //         <>
-  //           <Stack.Screen
-  //             name="Home Page"
-  //             component={HomePage}
-  //             options={{ headerShown: false }}
-  //           />
-  //           <Stack.Screen
-  //             name="Product Detail Page"
-  //             component={ProductDetail}
-  //             options={{ title: "Product Detail Page", headerShown: false }}
-  //           />
-  //           <Stack.Screen
-  //             name="Welcome Page"
-  //             component={Welcome}
-  //             options={{ title: "Welcome Page", headerShown: false }}
-  //           />
-
-  //           <Stack.Screen
-  //             name="Welcome Auth"
-  //             component={WelcomeAuth}
-  //             options={{ title: "Welcome Auth Page", headerShown: false }}
-  //           />
-  //           <Stack.Screen
-  //             name="Signup Page"
-  //             component={Signup}
-  //             options={{ title: "Signup Page", headerShown: false }}
-  //           />
-  //           <Stack.Screen
-  //             name="Login Page"
-  //             component={Login}
-  //             options={{ title: "Login Page", headerShown: false }}
-  //           />
-  //           <Stack.Screen
-  //             name="Forgot Password"
-  //             component={ForgotPassword}
-  //             options={{ title: "Forgot Password", headerShown: false }}
-  //           />
-  //         </>
-  //       )}
-  //     </Stack.Navigator>
-  //   </NavigationContainer>
-  // );
   const HomePageDrawer = () => {
     return (
       <Drawer.Navigator
-        // initialRouteName="Home"
         screenOptions={{
           headerShown: false,
           drawerActiveTintColor: "#fff",
@@ -155,21 +82,10 @@ export default function App() {
     );
   };
   return (
-    // <BaseNavigationContainer></BaseNavigationContainer>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Splash Screen">
-        {/* <Stack.Navigator initialRouteName="Upload Image"> */}
         <Stack.Screen
-          // name="Home Page"
-          name="Upload Image"
-          // component={HomePage}
-          component={UploadImage}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          // name="Home Page"
           name="Home Drawer"
-          // component={HomePage}
           component={HomePageDrawer}
           options={{ headerShown: false }}
         />

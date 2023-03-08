@@ -44,15 +44,6 @@ export default function Signup() {
         ToastAndroid.show(`${validate.message}`, ToastAndroid.SHORT);
       });
   };
-  // const [isFocused, setIsFocused] = useState(false);
-  // const activeInput = () => {
-  //   // const ii = true;
-  //   if (isFocused) {
-  //     return styles.inputFormActive;
-  //   } else {
-  //     return styles.inputForm;
-  //   }
-  // };
   return (
     <View style={[commonStyle.bgBase, styles.container]}>
       <View style={styles.image}>
@@ -100,9 +91,6 @@ export default function Signup() {
           cursorColor="#6A4029"
         />
         <TextInput
-          // onFocus={() => setIsFocused(true)}
-          // onBlur={() => setIsFocused(false)}
-          // style={isFocused ? styles.inputFormActive : styles.inputForm}
           style={styles.inputForm}
           placeholder="Enter your phone number"
           onChangeText={(text) =>

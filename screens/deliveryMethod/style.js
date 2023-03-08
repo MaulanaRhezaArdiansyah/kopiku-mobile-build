@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     display: "flex",
     width: "100%",
     height: "100%",
-    // paddingTop: 80,
     paddingTop: 60,
   },
   navbar: {
@@ -87,7 +86,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 
-  // DELIVERY RADIO BUTTON
   radioButtonContainer: {
     flexDirection: "row",
     alignItems: "center",

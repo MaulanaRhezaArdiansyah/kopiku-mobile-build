@@ -16,22 +16,18 @@ export default function NavbarHome() {
     role: "",
     username: "",
   });
-  // get id dari asyncStorage
   useEffect(() => {
     AsyncStorage.getItem("@userData")
       .then((result) => {
         const value = JSON.parse(result);
         const valueID = value?.user;
         setUserData(valueID);
-        // setRefetch(!refetch);
         setRefetch(true);
       })
       .catch((err) => {
-        console.log(err);
+        err;
       });
-    // }, [userData, refetch]);
   }, [refetch]);
-  // get dataCart untuk display jumlah product yang ada di cart
   const [dataCart, setDataCart] = useState([]);
   useEffect(() => {
     AsyncStorage.getItem("@cart")
@@ -40,7 +36,7 @@ export default function NavbarHome() {
         setDataCart(dataCart);
       })
       .catch((err) => {
-        console.log(err);
+        err;
       });
   }, [dataCart]);
   return (
@@ -84,7 +80,6 @@ export default function NavbarHome() {
           <View style={[styles.profilePic]}>
             <Image
               style={commonStyle.imageCircle}
-              // source={require("../../src/assets/images/rheza-profile-pic-2.png")}
               source={
                 userData?.image
                   ? {

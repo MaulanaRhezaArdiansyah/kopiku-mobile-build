@@ -5,22 +5,18 @@ export default function StaffList() {
   const staff = [
     {
       id: 1,
-      // image
       staffName: "Yola",
     },
     {
       id: 2,
-      // image
       staffName: "Dea",
     },
     {
       id: 3,
-      // image
       staffName: "Bintang",
     },
     {
       id: 4,
-      // image
       staffName: "Messi",
     },
   ];

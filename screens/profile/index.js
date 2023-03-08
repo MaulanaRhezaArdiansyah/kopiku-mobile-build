@@ -41,14 +41,12 @@ export default function Profile({ navigation, route }) {
         setRefetch(!refetch);
         // setRefetch(true);
       } catch (error) {
-        console.log(error);
+        error;
       }
     };
     getUser();
   }, [userID, refetch]);
-  // }, [ref]);
   const [history, setHistory] = useState([]);
-  // const [refetchHistory, setRefetchHistory] = useState(false);
   useEffect(() => {
     const getHistoryAPI = async () => {
       try {
@@ -56,16 +54,11 @@ export default function Profile({ navigation, route }) {
         const data = await response?.data?.data;
         setHistory(data);
       } catch (error) {
-        // alert(error);
         console.log(error);
       }
-      // setRefetch(!refetch)
     };
     getHistoryAPI();
-    // }, []);
   }, [refetch]);
-  // console.log(userData);
-  // console.log(refetch);
   return (
     <View style={[commonStyle.px40, styles.container]}>
       <View style={styles.navbar}>
@@ -206,7 +199,6 @@ export default function Profile({ navigation, route }) {
 
         <TouchableOpacity
           style={[commonStyle.brownButton, { width: "100%" }]}
-          // onPress={() => navigation.navigate("Home Drawer")}
           onPress={() => {
             setRefetch(!refetch);
             ToastAndroid.show("Saving your profile", ToastAndroid.SHORT);

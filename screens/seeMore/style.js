@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     display: "flex",
     width: "100%",
     height: "100%",
-    // paddingTop: 80,
     paddingTop: 60,
     position: "relative",
   },
@@ -56,7 +55,6 @@ const styles = StyleSheet.create({
     height: 200,
     width: 160,
     borderRadius: 30,
-    // justifyContent: "flex-end",
     alignItems: "center",
     padding: 10,
   },
@@ -65,7 +63,6 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   text: {
-    // backgroundColor: "red",
     width: "100%",
   },
   productTitle: {

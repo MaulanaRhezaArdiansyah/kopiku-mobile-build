@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
     color: "#6A4029",
   },
   inputFormActive: {
-    // borderBottomColor: "#9F9F9F",
     borderBottomColor: "#6A4029",
     borderBottomWidth: 2,
     width: 350,

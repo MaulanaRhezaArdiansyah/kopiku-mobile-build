@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     display: "flex",
     width: "100%",
     height: "100%",
-    // paddingTop: 80,
     paddingTop: 60,
   },
   navbar: {
@@ -59,7 +58,6 @@ const styles = StyleSheet.create({
   },
   buttonProfileBox: {
     paddingTop: 20,
-    // paddingVertical: 20,
   },
   buttonProfileCard: {
     height: 50,

@@ -44,7 +44,7 @@ export default function DeliveryMethod({ navigation }) {
         setRefetch(true);
       })
       .catch((err) => {
-        console.log(err);
+        err;
       });
   }, [refetch]);
 
@@ -71,7 +71,7 @@ export default function DeliveryMethod({ navigation }) {
         setRefetch(true);
       })
       .catch((err) => {
-        console.log(err);
+        err;
       });
   }, [refetch]);
 
@@ -81,10 +81,9 @@ export default function DeliveryMethod({ navigation }) {
       .then((result) => {
         const value = JSON.parse(result);
         setCarts(value);
-        // console.log(value);
       })
       .catch((err) => {
-        console.log(err);
+        err;
       });
   }, []);
   const itemPriceUhuy = carts?.map((tot) => {

@@ -58,7 +58,6 @@ export default function DisplayProduct({ keyword, category }) {
   return (
     <>
       <FlatList
-        // onScrollAnimationEnd={}
         horizontal
         showsHorizontalScrollIndicator={false}
         data={dataProducts}

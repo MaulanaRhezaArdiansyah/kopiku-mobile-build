@@ -15,7 +15,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash-kopiku.jpg",
+      "image": "./assets/splash-kopiku.png",
       "resizeMode": "cover"
     },
     "updates": {
@@ -42,7 +42,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "40b9b3ff-96d4-4485-976d-e29379a827d6"
+        "projectId": "645913dd-ef14-4b8a-8345-6506a3e60cf9"
       }
     }
   }

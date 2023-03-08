@@ -11,7 +11,6 @@ export default function DrawerCustom(props) {
   const logout = () => {
     AsyncStorage.removeItem("@userData");
     AsyncStorage.removeItem("@cart");
-    // navigation.navigate("Login Page");
     navigation.navigate("Home Drawer");
   };
   return (

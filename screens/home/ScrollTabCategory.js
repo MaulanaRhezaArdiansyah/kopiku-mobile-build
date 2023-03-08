@@ -27,16 +27,6 @@ export default function ScrollTabCategory({
             </Text>
           </View>
         </Pressable>
-        {/* <Pressable>
-          <View style={[styles.tabTextBox]}>
-            <Text style={styles.tabText}>Favorite</Text>
-          </View>
-        </Pressable> */}
-        {/* <Pressable>
-          <View style={styles.tabTextBox}>
-            <Text style={styles.tabText}>Promo</Text>
-          </View>
-        </Pressable> */}
         <Pressable
           onPress={() => {
             setCategory("Coffee");

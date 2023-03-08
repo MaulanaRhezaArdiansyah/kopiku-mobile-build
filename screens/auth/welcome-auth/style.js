@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    // justifyContent: "space-between",
     paddingVertical: 20,
   },
   textWelcome: {

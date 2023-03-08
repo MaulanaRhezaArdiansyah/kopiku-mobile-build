@@ -30,7 +30,6 @@ export default function Login() {
       data: dataLogin,
     })
       .then((result) => {
-        // console.log(result.data.data);
         ToastAndroid.show(`${result.data.message}`, ToastAndroid.SHORT);
         AsyncStorage.setItem("@userData", JSON.stringify(result?.data?.data));
         navigation.navigate("Home Drawer");
@@ -55,7 +54,6 @@ export default function Login() {
           alright: true,
           data: JSON.parse(value),
         });
-        // navigation.navigate("Home Drawer");
         navigation.goBack();
       } else {
         setIsLogged({
@@ -70,10 +68,6 @@ export default function Login() {
   useEffect(() => {
     getDataAuth();
   }, []);
-  // if (isLogged.alright) {
-  //   navigation.navigate("Home Drawer");
-  //   // navigation.goBack()
-  // }
   return (
     <View style={styles.container}>
       <View style={styles.heroLogin}>
@@ -128,7 +122,6 @@ export default function Login() {
       <Pressable
         onPress={() => {
           navigation.goBack();
-          // navigation.navigate("Home Drawer");
         }}
       >
         <View style={styles.loginWithGoogle}>

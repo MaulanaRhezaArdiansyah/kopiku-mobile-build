@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     display: "flex",
     width: "100%",
     height: "100%",
-    // paddingTop: 80,
     paddingTop: 60,
   },
   navbar: {
@@ -52,10 +51,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
   },
-  editPencil: {
-    // width: "100%",
-    // height: "100%",
-  },
+  editPencil: {},
   labelForm: {
     color: "#9f9f9f",
     fontWeight: "700",
@@ -73,7 +69,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    // backgroundColor: "red",
     borderBottomColor: "#9f9f9f",
     borderBottomWidth: 1,
     paddingTop: 6,

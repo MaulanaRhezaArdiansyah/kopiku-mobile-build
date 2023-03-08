@@ -18,8 +18,6 @@ import NavbarUnlogged from "./NavbarUnlogged";
 
 export default function HomePage() {
   const navigation = useNavigation();
-  // const route = useRoute()
-  // const {asd} = route.
   const [keyword, setKeyword] = useState("");
   const [refetch, setRefetch] = useState(false);
   const [category, setCategory] = useState("");
@@ -36,7 +34,6 @@ export default function HomePage() {
   });
   const [refetchHome, setRefetchHome] = useState(false);
   const [navbar, setNavbar] = useState();
-  // get dataUser untuk nantinya dirender saat say Hi dan untuk conditional rendering navbar dan say hi
   useEffect(() => {
     AsyncStorage.getItem("@userData")
       .then((result) => {
@@ -48,13 +45,12 @@ export default function HomePage() {
           setNavbar(<NavbarUnlogged />);
         } else {
           setRefetchHome(!refetchHome);
-          // setRefetchHome(true);
           setIsLogged(true);
           setNavbar(<NavbarHome />);
         }
       })
       .catch((err) => {
-        console.log(err);
+        err;
       });
   }, [refetchHome]);
 
@@ -83,13 +79,8 @@ export default function HomePage() {
           {category ? category : "All"}
         </Text>
         <Pressable
-          onPress={
-            () => navigation.navigate("See More Page", { category: category })
-            // {
-            // alert("logouted");
-            // AsyncStorage.removeItem("@userData");
-            // navigation.navigate("Login Page");
-            // }
+          onPress={() =>
+            navigation.navigate("See More Page", { category: category })
           }
         >
           <Text style={[commonStyle.textBrown, styles.seeMore]}>See more</Text>
