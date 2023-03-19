@@ -65,7 +65,9 @@ export default function History({ navigation }) {
   const [historyy, setHistoryy] = useState([]);
   useEffect(() => {
     const getHistoryAPI = async () => {
-      const response = await axios.get(`${API_URL}/api/v1/history/${userID}`);
+      const response = await axios.get(
+        `https://kopiku.up.railway.app/api/v1/history/${userID}`
+      );
       const data = response?.data?.data;
       setHistoryy(data);
       setIsLoading(false);

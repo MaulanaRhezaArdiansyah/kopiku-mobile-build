@@ -99,7 +99,7 @@ export default function Payment({ navigation }) {
     for (let i = 0; i < carts.length; i++) {
       axios({
         method: "POST",
-        url: `${API_URL}/api/v1/history/${dataUserID}`,
+        url: `https://kopiku.up.railway.app/api/v1/history/${dataUserID}`,
         data: dataAddHistory,
       })
         .then((result) => {

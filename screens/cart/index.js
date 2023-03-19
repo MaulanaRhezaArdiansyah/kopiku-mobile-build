@@ -92,7 +92,7 @@ export default function Cart() {
                   <Image
                     style={styles.productImage}
                     source={{
-                      uri: `${API_URL}/images/${item.imageCart}`,
+                      uri: `https://kopiku.up.railway.app/images/${item.imageCart}`,
                     }}
                   />
                   <View style={styles.productInfoCart}>

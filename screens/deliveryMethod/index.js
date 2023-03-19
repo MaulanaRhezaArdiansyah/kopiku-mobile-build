@@ -66,7 +66,7 @@ export default function DeliveryMethod({ navigation }) {
   });
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/v1/users/${userID}`)
+      .get(`https://kopiku.up.railway.app/api/v1/users/${userID}`)
       .then((result) => {
         setCusomerData(result.data.data);
         setRefetch(true);

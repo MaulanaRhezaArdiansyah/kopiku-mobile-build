@@ -28,7 +28,7 @@ export default function Login() {
   const handleLogin = () => {
     axios({
       method: "POST",
-      url: `${API_URL}/api/v1/auth/login`,
+      url: `https://kopiku.up.railway.app/api/v1/auth/login`,
       data: dataLogin,
     })
       .then((result) => {

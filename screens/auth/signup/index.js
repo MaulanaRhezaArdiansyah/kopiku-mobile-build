@@ -31,7 +31,7 @@ export default function Signup() {
   const handleSignup = () => {
     axios({
       method: "POST",
-      url: `${API_URL}/api/v1/auth/register`,
+      url: `https://kopiku.up.railway.app/api/v1/auth/register`,
       data: dataSignup,
     })
       .then((result) => {

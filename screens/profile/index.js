@@ -35,7 +35,9 @@ export default function Profile({ navigation, route }) {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get(`${API_URL}/api/v1/users/${userID}`);
+        const response = await axios.get(
+          `https://kopiku.up.railway.app/api/v1/users/${userID}`
+        );
         const data = await response?.data?.data;
         setUserData(data);
         setRefetch(!refetch);
@@ -50,7 +52,9 @@ export default function Profile({ navigation, route }) {
   useEffect(() => {
     const getHistoryAPI = async () => {
       try {
-        const response = await axios.get(`${API_URL}/api/v1/history/${userID}`);
+        const response = await axios.get(
+          `https://kopiku.up.railway.app/api/v1/history/${userID}`
+        );
         const data = await response?.data?.data;
         setHistory(data);
         setRefetch(!refetch);
@@ -75,7 +79,7 @@ export default function Profile({ navigation, route }) {
             source={
               userData?.image
                 ? {
-                    uri: `${API_URL}/images/${userData?.image}`,
+                    uri: `https://kopiku.up.railway.app/images/${userData?.image}`,
                   }
                 : require("../../src/assets/images/default-avatar.jpg")
             }
@@ -141,7 +145,7 @@ export default function Profile({ navigation, route }) {
                   source={
                     item
                       ? {
-                          uri: `${API_URL}images/${item.images[0].filename}`,
+                          uri: `https://kopiku.up.railway.appimages/${item.images[0].filename}`,
                         }
                       : require("../../src/assets/images/default-avatar.jpg")
                   }

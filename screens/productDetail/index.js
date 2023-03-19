@@ -49,7 +49,7 @@ export default function ProductDetail({ route }) {
   });
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/v1/products/${productId}`)
+      .get(`https://kopiku.up.railway.app/api/v1/products/${productId}`)
       .then((result) => {
         setDetail(result.data.data);
       })
@@ -139,7 +139,7 @@ export default function ProductDetail({ route }) {
         <Image
           style={styles.productImage}
           source={{
-            uri: `${API_URL}/images/${detail.images[0].filename}`,
+            uri: `https://kopiku.up.railway.app/images/${detail.images[0].filename}`,
           }}
         />
       </View>

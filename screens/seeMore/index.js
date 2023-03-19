@@ -12,7 +12,7 @@ export default function SeeMore({ route }) {
   const [dataProductCategory, setDataProductCategory] = useState([]);
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/v1/products${`?cat=${category}`}`)
+      .get(`https://kopiku.up.railway.app/api/v1/products${`?cat=${category}`}`)
       .then((result) => {
         setDataProductCategory(result.data.data);
       })
@@ -56,7 +56,7 @@ export default function SeeMore({ route }) {
               <Image
                 style={styles.productImage}
                 source={{
-                  uri: `${API_URL}/images/${item.images[0].filename}`,
+                  uri: `https://kopiku.up.railway.app/images/${item.images[0].filename}`,
                 }}
               />
               <View style={[styles.card, styles.shadowCard]}>

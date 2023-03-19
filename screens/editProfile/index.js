@@ -40,7 +40,9 @@ export default function EditProfile({ navigation, route }) {
 
   const getUser = async () => {
     try {
-      const response = await axios.get(`${API_URL}/api/v1/users/${ID}`);
+      const response = await axios.get(
+        `https://kopiku.up.railway.app/api/v1/users/${ID}`
+      );
       const data = await response.data.data;
       setDataUser(data);
       setRefetch(!refetch);
@@ -109,7 +111,7 @@ export default function EditProfile({ navigation, route }) {
     });
     axios({
       method: "PATCH",
-      url: `${API_URL}/api/v1/users/${ID}`,
+      url: `https://kopiku.up.railway.app/api/v1/users/${ID}`,
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
@@ -147,7 +149,7 @@ export default function EditProfile({ navigation, route }) {
                 ? { uri: imagePreview }
                 : dataUser.image
                 ? {
-                    uri: `${API_URL}/images/${dataUser.image}`,
+                    uri: `https://kopiku.up.railway.app/images/${dataUser.image}`,
                   }
                 : require("../../src/assets/images/default-avatar.jpg")
             }

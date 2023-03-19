@@ -32,7 +32,7 @@ export default function DisplayProduct({ keyword, category }) {
   useEffect(() => {
     axios
       .get(
-        `${API_URL}/api/v1/products?limit=6${
+        `https://kopiku.up.railway.app/api/v1/products?limit=6${
           keyword ? `&search=${keyword}` : ""
         }${category ? `&cat=${category}` : ""}`
       )
@@ -81,7 +81,7 @@ export default function DisplayProduct({ keyword, category }) {
               <Image
                 source={{
                   uri: p.item.images[0].filename
-                    ? `${API_URL}/images/${p.item.images[0].filename}`
+                    ? `https://kopiku.up.railway.app/images/${p.item.images[0].filename}`
                     : "https://user-images.githubusercontent.com/43302778/106805462-7a908400-6645-11eb-958f-cd72b74a17b3.jpg",
                 }}
                 style={styles.productImage}

@@ -43,7 +43,9 @@ export default function NavbarHome() {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get(`${API_URL}/api/v1/users/${userID}`);
+        const response = await axios.get(
+          `https://kopiku.up.railway.app/api/v1/users/${userID}`
+        );
         setUserData(response?.data?.data);
         setRefetch(!refetch);
       } catch (error) {
@@ -109,7 +111,7 @@ export default function NavbarHome() {
               source={
                 userData?.image
                   ? {
-                      uri: `${API_URL}/images/${userData.image}`,
+                      uri: `https://kopiku.up.railway.app/images/${userData.image}`,
                     }
                   : require("../../src/assets/images/default-avatar.jpg")
               }
