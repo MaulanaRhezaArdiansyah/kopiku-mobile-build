@@ -29,19 +29,24 @@ export default function DisplayProduct({ keyword, category }) {
     error: false,
     message: "",
   });
+  const [refetch, setRefetch] = useState(false);
   useEffect(() => {
     axios
       .get(
-        `https://kopiku.up.railway.app/api/v1/products?limit=6${
-          keyword ? `&search=${keyword}` : ""
-        }${category ? `&cat=${category}` : ""}`
+        `https://kopiku.up.railway.app/api/v1/products?limit=6&search=${keyword}&cat=${category}`
       )
+      // .get(
+      //   `https://kopiku.up.railway.app/api/v1/products?limit=6${
+      //     keyword ? `&search=${keyword}` : ""
+      //   }${category ? `&cat=${category}` : ""}`
+      // )
       .then((result) => {
-        setDataProducts(result.data.data);
+        setDataProducts(result?.data?.data);
         setNotFound({
           error: false,
           message: "",
         });
+        // setRefetch(!refetch);
       })
       .catch((err) => {
         setNotFound({
