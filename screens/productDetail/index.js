@@ -12,6 +12,7 @@ import commonStyle from "../../src/assets/styles/commonStyle";
 import styles from "./style";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
+import { API_URL } from "@env";
 
 export default function ProductDetail({ route }) {
   const navigation = useNavigation();
@@ -48,9 +49,7 @@ export default function ProductDetail({ route }) {
   });
   useEffect(() => {
     axios
-      .get(
-        `https://cheerful-overalls-fawn.cyclic.app/api/v1/products/${productId}`
-      )
+      .get(`${API_URL}/api/v1/products/${productId}`)
       .then((result) => {
         setDetail(result.data.data);
       })
@@ -140,7 +139,7 @@ export default function ProductDetail({ route }) {
         <Image
           style={styles.productImage}
           source={{
-            uri: `https://cheerful-overalls-fawn.cyclic.app/uploads/images/${detail.images[0].filename}`,
+            uri: `${API_URL}/images/${detail.images[0].filename}`,
           }}
         />
       </View>

@@ -11,6 +11,8 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import commonStyle from "../../src/assets/styles/commonStyle";
 import styles from "./style";
+import { API_URL } from "@env";
+
 export default function Cart() {
   const navigation = useNavigation();
   const carts = [
@@ -90,7 +92,7 @@ export default function Cart() {
                   <Image
                     style={styles.productImage}
                     source={{
-                      uri: `https://cheerful-overalls-fawn.cyclic.app/uploads/images/${item.imageCart}`,
+                      uri: `${API_URL}/images/${item.imageCart}`,
                     }}
                   />
                   <View style={styles.productInfoCart}>

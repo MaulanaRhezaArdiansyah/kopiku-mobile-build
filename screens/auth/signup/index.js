@@ -13,6 +13,8 @@ import {
 import commonStyle from "../../../src/assets/styles/commonStyle";
 import styling from "./style";
 const styles = styling;
+import { API_URL } from "@env";
+
 export default function Signup() {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
@@ -29,7 +31,7 @@ export default function Signup() {
   const handleSignup = () => {
     axios({
       method: "POST",
-      url: `https://cheerful-overalls-fawn.cyclic.app/api/v1/auth/register`,
+      url: `${API_URL}/api/v1/auth/register`,
       data: dataSignup,
     })
       .then((result) => {

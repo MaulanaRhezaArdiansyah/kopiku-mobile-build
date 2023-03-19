@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 import { FlatList, Image, Pressable, Text, View } from "react-native";
 import commonStyle from "../../src/assets/styles/commonStyle";
 import styles from "./style";
+import { API_URL } from "@env";
+
 export default function SeeMore({ route }) {
   const navigation = useNavigation();
   const { category } = route.params;
   const [dataProductCategory, setDataProductCategory] = useState([]);
   useEffect(() => {
     axios
-      .get(
-        `https://cheerful-overalls-fawn.cyclic.app/api/v1/products${`?cat=${category}`}`
-      )
+      .get(`${API_URL}/api/v1/products${`?cat=${category}`}`)
       .then((result) => {
         setDataProductCategory(result.data.data);
       })
@@ -56,7 +56,7 @@ export default function SeeMore({ route }) {
               <Image
                 style={styles.productImage}
                 source={{
-                  uri: `https://cheerful-overalls-fawn.cyclic.app/uploads/images/${item.images[0].filename}`,
+                  uri: `${API_URL}/images/${item.images[0].filename}`,
                 }}
               />
               <View style={[styles.card, styles.shadowCard]}>

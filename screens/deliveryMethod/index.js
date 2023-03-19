@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
 import commonStyle from "../../src/assets/styles/commonStyle";
+import { API_URL } from "@env";
 
 import styles from "./style";
 export default function DeliveryMethod({ navigation }) {
@@ -65,7 +66,7 @@ export default function DeliveryMethod({ navigation }) {
   });
   useEffect(() => {
     axios
-      .get(`https://cheerful-overalls-fawn.cyclic.app/api/v1/users/${userID}`)
+      .get(`${API_URL}/api/v1/users/${userID}`)
       .then((result) => {
         setCusomerData(result.data.data);
         setRefetch(true);

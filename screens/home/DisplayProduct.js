@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductNotFound from "./ProductNotFound";
+import { API_URL } from "@env";
 export default function DisplayProduct({ keyword, category }) {
   const navigation = useNavigation();
   const [dataProducts, setDataProducts] = useState([
@@ -31,7 +32,7 @@ export default function DisplayProduct({ keyword, category }) {
   useEffect(() => {
     axios
       .get(
-        `https://cheerful-overalls-fawn.cyclic.app/api/v1/products?limit=6${
+        `${API_URL}/api/v1/products?limit=6${
           keyword ? `&search=${keyword}` : ""
         }${category ? `&cat=${category}` : ""}`
       )
@@ -80,7 +81,7 @@ export default function DisplayProduct({ keyword, category }) {
               <Image
                 source={{
                   uri: p.item.images[0].filename
-                    ? `https://cheerful-overalls-fawn.cyclic.app/uploads/images/${p.item.images[0].filename}`
+                    ? `${API_URL}/images/${p.item.images[0].filename}`
                     : "https://user-images.githubusercontent.com/43302778/106805462-7a908400-6645-11eb-958f-cd72b74a17b3.jpg",
                 }}
                 style={styles.productImage}

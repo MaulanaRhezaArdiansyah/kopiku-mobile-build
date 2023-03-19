@@ -13,6 +13,8 @@ import {
 import styling from "./style";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 const styles = styling;
+import { API_URL } from "@env";
+
 export default function Login() {
   const navigation = useNavigation();
   const [dataLogin, setDataLogin] = useState({
@@ -26,7 +28,7 @@ export default function Login() {
   const handleLogin = () => {
     axios({
       method: "POST",
-      url: `https://cheerful-overalls-fawn.cyclic.app/api/v1/auth/login`,
+      url: `${API_URL}/api/v1/auth/login`,
       data: dataLogin,
     })
       .then((result) => {

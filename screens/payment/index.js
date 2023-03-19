@@ -12,6 +12,7 @@ import {
   View,
 } from "react-native";
 import commonStyle from "../../src/assets/styles/commonStyle";
+import { API_URL } from "@env";
 // import ModalPaymentSuccess from "../../src/components/modalPayment/modalPaymentSuccess";
 
 import styles from "./style";
@@ -94,12 +95,11 @@ export default function Payment({ navigation }) {
     });
   }, [carts]);
 
-  const URL = `https://cheerful-overalls-fawn.cyclic.app/`;
   const handlePayment = () => {
     for (let i = 0; i < carts.length; i++) {
       axios({
         method: "POST",
-        url: `${URL}/api/v1/history/${dataUserID}`,
+        url: `${API_URL}/api/v1/history/${dataUserID}`,
         data: dataAddHistory,
       })
         .then((result) => {

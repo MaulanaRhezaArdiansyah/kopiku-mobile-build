@@ -21,6 +21,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import DrawerCustom from "./src/components/DrawerCustom";
 import Icon from "@expo/vector-icons/Ionicons";
 import SplashScreen from "./screens/splash/SplashScreen";
+import { API_URL } from "@env";
 
 const Drawer = createDrawerNavigator();
 

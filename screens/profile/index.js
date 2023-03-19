@@ -11,6 +11,7 @@ import {
   View,
 } from "react-native";
 import commonStyle from "../../src/assets/styles/commonStyle";
+import { API_URL } from "@env";
 
 import styles from "./style";
 export default function Profile({ navigation, route }) {
@@ -31,30 +32,30 @@ export default function Profile({ navigation, route }) {
     role: "",
   });
 
-  const URL = `https://cheerful-overalls-fawn.cyclic.app/`;
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get(`${URL}/api/v1/users/${userID}`);
+        const response = await axios.get(`${API_URL}/api/v1/users/${userID}`);
         const data = await response?.data?.data;
         setUserData(data);
         setRefetch(!refetch);
-        // setRefetch(true);
       } catch (error) {
         error;
       }
     };
     getUser();
   }, [userID, refetch]);
+
   const [history, setHistory] = useState([]);
   useEffect(() => {
     const getHistoryAPI = async () => {
       try {
-        const response = await axios.get(`${URL}/api/v1/history/${userID}`);
+        const response = await axios.get(`${API_URL}/api/v1/history/${userID}`);
         const data = await response?.data?.data;
         setHistory(data);
+        setRefetch(!refetch);
       } catch (error) {
-        console.log(error);
+        console.log(error?.response?.data?.message);
       }
     };
     getHistoryAPI();
@@ -74,7 +75,7 @@ export default function Profile({ navigation, route }) {
             source={
               userData?.image
                 ? {
-                    uri: `https://cheerful-overalls-fawn.cyclic.app/uploads/images/${userData?.image}`,
+                    uri: `${API_URL}/images/${userData?.image}`,
                   }
                 : require("../../src/assets/images/default-avatar.jpg")
             }
@@ -140,7 +141,7 @@ export default function Profile({ navigation, route }) {
                   source={
                     item
                       ? {
-                          uri: `${URL}/uploads/images/${item.images[0].filename}`,
+                          uri: `${API_URL}images/${item.images[0].filename}`,
                         }
                       : require("../../src/assets/images/default-avatar.jpg")
                   }

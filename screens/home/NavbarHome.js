@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { API_URL } from "@env";
 
 export default function NavbarHome() {
   const navigation = useNavigation();
@@ -16,29 +17,54 @@ export default function NavbarHome() {
     role: "",
     username: "",
   });
+  // useEffect(() => {
+  //   AsyncStorage.getItem("@userData")
+  //     .then((result) => {
+  //       const value = JSON.parse(result);
+  //       const valueID = value?.user;
+  //       setUserData(valueID);
+  //       setRefetch(!refetch);
+  //     })
+  //     .catch((err) => {
+  //       err;
+  //     });
+  // }, [refetch]);
+
+  const [userID, setUserID] = useState();
   useEffect(() => {
-    AsyncStorage.getItem("@userData")
-      .then((result) => {
-        const value = JSON.parse(result);
-        const valueID = value?.user;
-        setUserData(valueID);
-        setRefetch(true);
-      })
-      .catch((err) => {
-        err;
-      });
+    const getUserID = async () => {
+      const data = await AsyncStorage.getItem("@userData");
+      const dataJSON = await JSON.parse(data);
+      setUserID(dataJSON?.user?.id);
+    };
+    getUserID();
+  }, []);
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/v1/users/${userID}`);
+        setUserData(response?.data?.data);
+        setRefetch(!refetch);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getUser();
   }, [refetch]);
+
   const [dataCart, setDataCart] = useState([]);
   useEffect(() => {
     AsyncStorage.getItem("@cart")
       .then((result) => {
         const dataCart = JSON.parse(result);
         setDataCart(dataCart);
+        setRefetch(!refetch);
       })
       .catch((err) => {
-        err;
+        console.log(err);
       });
-  }, [dataCart]);
+  }, [dataCart, refetch]);
   return (
     <View style={[commonStyle.px40, styles.navbar]}>
       <View>
@@ -83,7 +109,7 @@ export default function NavbarHome() {
               source={
                 userData?.image
                   ? {
-                      uri: `https://cheerful-overalls-fawn.cyclic.app/uploads/images/${userData.image}`,
+                      uri: `${API_URL}/images/${userData.image}`,
                     }
                   : require("../../src/assets/images/default-avatar.jpg")
               }

@@ -18,6 +18,7 @@ import {
 import commonStyle from "../../src/assets/styles/commonStyle";
 import * as ImagePicker from "expo-image-picker";
 import styles from "./style";
+import { API_URL } from "@env";
 
 export default function EditProfile({ navigation, route }) {
   const { ID } = route.params;
@@ -37,22 +38,19 @@ export default function EditProfile({ navigation, route }) {
     role: "",
   });
 
-  const URL = `https://cheerful-overalls-fawn.cyclic.app/`;
-
   const getUser = async () => {
     try {
-      const response = await axios.get(
-        `https://cheerful-overalls-fawn.cyclic.app/api/v1/users/${ID}`
-      );
+      const response = await axios.get(`${API_URL}/api/v1/users/${ID}`);
       const data = await response.data.data;
       setDataUser(data);
+      setRefetch(!refetch);
     } catch (error) {
       error;
     }
   };
   useEffect(() => {
     getUser();
-  }, []);
+  }, [refetch]);
 
   const [imagePreview, setImagePreview] = useState(null);
   const [dataInput, setDataInput] = useState({
@@ -111,7 +109,7 @@ export default function EditProfile({ navigation, route }) {
     });
     axios({
       method: "PATCH",
-      url: `https://cheerful-overalls-fawn.cyclic.app/api/v1/users/${ID}`,
+      url: `${API_URL}/api/v1/users/${ID}`,
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
@@ -149,7 +147,7 @@ export default function EditProfile({ navigation, route }) {
                 ? { uri: imagePreview }
                 : dataUser.image
                 ? {
-                    uri: `https://cheerful-overalls-fawn.cyclic.app/uploads/images/${dataUser.image}`,
+                    uri: `${API_URL}/images/${dataUser.image}`,
                   }
                 : require("../../src/assets/images/default-avatar.jpg")
             }

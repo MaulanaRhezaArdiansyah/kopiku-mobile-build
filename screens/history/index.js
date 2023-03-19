@@ -14,6 +14,7 @@ import {
 import commonStyle from "../../src/assets/styles/commonStyle";
 import styles from "./style";
 import Icon from "@expo/vector-icons/Ionicons";
+import { API_URL } from "@env";
 
 export default function History({ navigation }) {
   const history = [
@@ -46,7 +47,6 @@ export default function History({ navigation }) {
       detailStatus: "Monday at 3 PM",
     },
   ];
-  const URL = `https://cheerful-overalls-fawn.cyclic.app/`;
   const [userID, setUserID] = useState("");
   const [refetch, setRefetch] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -65,7 +65,7 @@ export default function History({ navigation }) {
   const [historyy, setHistoryy] = useState([]);
   useEffect(() => {
     const getHistoryAPI = async () => {
-      const response = await axios.get(`${URL}/api/v1/history/${userID}`);
+      const response = await axios.get(`${API_URL}/api/v1/history/${userID}`);
       const data = response?.data?.data;
       setHistoryy(data);
       setIsLoading(false);
